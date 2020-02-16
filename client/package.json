@@ -1,10 +1,13 @@
 {
   "name": "bt",
-  "private": false,
+  "private": true,
+  "proxy": "http://localhost:3001/",
   "description": "A simple one page budget app",
   "version": "1.0.0",
   "author": "Richard Germaine <rlgerma92@outlook.com>",
   "dependencies": {
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
     "core-js": "^3.6.4",
     "gatsby": "^2.19.16",
     "gatsby-image": "^2.2.24",
@@ -24,6 +27,7 @@
     "react-dom": "^16.10.2",
     "react-feather": "^2.0.3",
     "react-helmet": "^5.2.1",
+    "react-router-dom": "^5.1.2",
     "react-scrollspy": "^3.4.0",
     "styled-components": "^4.4.0"
   },
