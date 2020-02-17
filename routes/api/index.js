@@ -1,6 +1,8 @@
 const router = require("express").Router();
-const balanceRoutes = require("./balance");
+const withdrawRoutes = require("./withdraw");
+const depositRoutes = require("./deposit")
 
-router.use("/balance", balanceRoutes);
+router.use("/Withdraw", withdrawRoutes);
+router.use("/Deposit", depositRoutes)
 
 module.exports = router;

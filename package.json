@@ -11,7 +11,7 @@
         "install": "npm run gatsby",
         "gatsby": "cd client && yarn install",
         "build": "cd client && gatsby build",
-        "heroku-postbuild": "npm run build"
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build"
     },
     "author": "rlgerma92",
     "license": "WTFPL",
@@ -22,7 +22,14 @@
     "dependencies": {
         "axios": "^0.18.0",
         "express": "^4.16.3",
-        "mongoose": "^5.3.16",
-        "if-env": "^1.0.4"
+        "if-env": "^1.0.4",
+        "mongodb": "^3.5.3",
+        "mongoose": "^5.2.9",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "express-jwt": "^5.3.1",
+        "jsonwebtoken": "^8.3.0",
+        "passport": "^0.4.0",
+        "passport-google-token": "^0.1.2"
     }
 }
