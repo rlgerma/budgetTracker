@@ -2,34 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const MongoClient = require("mongodb").MongoClient;
 const app = express();
-const cors = require("cors");
-const passport = require("passport");
-const bodyParser = require("body-parser");
-const path = require("path");
-const { PORT } = require("./config/keys");
-require("./dbconnect");
-require("./config/passport-google");
+const PORT = process.env.NODE_ENV || 3001
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-app.use(cors());
-
-app.use(passport.initialize());
-
-const googleAuthRoutes = require("./routes/authGoogle");
-app.use("/auth/google/", googleAuthRoutes);
-
-const withdrawRoutes = require("./routes/api/expense");
-app.use("/api/withdraw/", withdrawRoutes);
-
-const depositRoutes = require("./routes/api/income");
-app.use("/api/deposit/", depositRoutes);
-
-// Connect to the Mongo DB
 
 // Set up MongoDB Cluster if Available
 const uri =

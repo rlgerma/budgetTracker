@@ -16,7 +16,7 @@ import {
 
 const NAV_ITEMS = ["Features", "Tracker", ""]
 
-export default class Navigation extends Component {
+export default class LoginNav extends Component {
   state = {
     mobileMenuOpen: false,
     hasScrolled: false,
@@ -82,7 +82,7 @@ export default class Navigation extends Component {
         <StyledContainer>
           <Brand>
             <Scrollspy offset={-64} item={["top"]} currentClassName="active">
-              <AnchorLink href="#top" onClick={this.closeMobileMenu}>
+              <AnchorLink href="/" onClick={this.closeMobileMenu}>
                 Budget Tracker
               </AnchorLink>
             </Scrollspy>

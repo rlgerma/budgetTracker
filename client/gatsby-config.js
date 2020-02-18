@@ -40,23 +40,5 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-mongodb`,
-    //   options: {
-    //     dbName: `budget`,
-    //     collection: [`myMoney`],
-    //     server: {
-    //       address: "cluster0-shard-00-01-wqjz0.mongodb.net",
-    //       port: 27017,
-    //     },
-    //     auth: { user: "Alpha", password: "Password1" },
-    //     extraParams: {
-    //       replicaSet: `cluster0-shard-00-00-wqjz0`,
-    //       ssl: true,
-    //       authSource: `admin`,
-    //       retryWrites: true,
-    //     },
-    //   },
-    // },
   ],
 }

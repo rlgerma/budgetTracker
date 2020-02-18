@@ -37,9 +37,8 @@ const Footer = () => (
 )
 
 const FooterWrapper = styled.footer`
-  background-color: white;
-  margin: 80px 0 0;
-  padding: 0 0 80px;
+  margin: 40px 0 0;
+  padding: 0 0 40px;
 `
 
 const FooterColumnContainer = styled(Container)`

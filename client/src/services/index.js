@@ -1,4 +1,4 @@
-// Epstein didn't kil himself
+// Epstein didn't kill himself
 import {
   Stitch,
   RemoteMongoClient,
