@@ -8,16 +8,22 @@ Simple WebApp that helps users track their spending habits by taking in withdraw
 
 ### Currently unfinished
 
-last worked on - 2/15/20
+last worked on - 2/19/20
 
 #### ToDos
 
-- Complete balance input form left of Mongo Chart by writing out remaining sub components collapse buttons w/ sub button's data-targets
+- Get local sign in to work and import to auth0 when online
 
-- Write up API routes for withdraw/deposit for collapse sub buttons data-targets
+- Take user offline data and push to mongo when online
 
-- Finish dummy Modal for Sign in button in Nav-bar
+- Config service worker
+
+COMPLETE - Complete balance input form left of Mongo Chart by writing out remaining sub components collapse buttons w/ sub button's data-targets
+
+COMPLETE - Write up API routes for withdraw/deposit for collapse sub buttons data-targets
+
+COMPLETE - Finish dummy Modal for Sign in button in Nav-bar
 
 - Take styling out template land and create unique assets
 
-- deploy to heroku
+COMPLETE - deploy to heroku
