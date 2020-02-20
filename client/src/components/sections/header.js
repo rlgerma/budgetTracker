@@ -17,10 +17,6 @@ const Header = () => {
     }
   `)
 
-  const handleSubmit = event => {
-    event.preventDefault()
-  }
-
   return (
     <HeaderWrapper id="top">
       <Container>

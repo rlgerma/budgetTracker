@@ -2,14 +2,15 @@ import React from "react"
 import Layout from "../common/layout/layout"
 import Footer from "../sections/footer"
 import LoginNav from "../common/navigation/loginNav"
-import { navigate, Link } from "gatsby"
-import { login } from "../../utils/auth"
+import { navigate } from "gatsby"
+import { silentAuth } from "../../utils/auth"
 import { Container, Section } from "../global"
 import styled from "styled-components"
 import SEO from "../common/layout/seo"
 
-class Login extends React.Component {
+class SignUp extends React.Component {
   state = {
+    email: ``,
     username: ``,
     password: ``,
   }
@@ -22,23 +23,23 @@ class Login extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    login(this.state)
+    silentAuth(this.state)
   }
 
   render() {
-    if (login()) {
+    if (silentAuth()) {
       navigate(`/app/profile`)
     }
 
     return (
       <>
+        <Image />
         <Layout>
-          <Image />
-          <SEO title="Login" />
+          <SEO title="Sign Up" />
           <LoginNav />
           <Container>
             <Welcome>
-              <h1>Welcome Back</h1>
+              <h1>Budget Tracker</h1>
             </Welcome>
             <Section>
               <FormBox>
@@ -49,6 +50,16 @@ class Login extends React.Component {
                     navigate(`/app/profile`)
                   }}
                 >
+                  <label>
+                    Email
+                    <input
+                      type="text"
+                      name="email"
+                      onChange={this.handleUpdate}
+                    />
+                  </label>
+                  <br></br>
+                  <br></br>
                   <label>
                     Username
                     <input
@@ -79,15 +90,8 @@ class Login extends React.Component {
               <br />
               <br />
               <Message>
-                <h2>We kind of missed you</h2>
+                <h2>Financial Accountability, done right</h2>{" "}
               </Message>
-              <Join>
-                <strong>First time?</strong> Click
-                <Link to="/app/signup">
-                  <u> here </u>
-                </Link>
-                to join
-              </Join>
             </Section>
           </Container>
           <Image />
@@ -98,14 +102,13 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default SignUp
 
 const Image = styled(Section)`
   background-image: url("http://www.pngmart.com/files/7/Money-PNG-Clipart.png");
   background-attachment: fixed;
   background-size: auto;
   background-position: center;
-  background-color: #ffff;
 `
 
 const Welcome = styled(Section)`
@@ -141,13 +144,6 @@ const Message = styled(Section)`
       opacity: 1;
     }
   }
-`
-const Join = styled(Section)`
-  max-width: 100%;
-  height: auto;
-  float: right;
-  margin-right: 8%;
-  margin-top: -6%;
 `
 
 const FormBox = styled(Section)`

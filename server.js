@@ -1,14 +1,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const compression = require("compression");
+const logger = require("morgan");
 const MongoClient = require("mongodb").MongoClient;
 const app = express();
-const PORT = process.env.NODE_ENV || 3001
+const PORT = process.env.NODE_ENV || 3000;
 
+app.use(logger("dev"));
+app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+app.use(require("./routes/api"));
 
 // Set up MongoDB Cluster if Available
 const uri =
@@ -26,7 +31,7 @@ client.connect(err => {
 
   // Local Mongo Set up via Mongoose
   localMongo = () => {
-    mongoose.connect(MONGODB_URI, {
+    mongoose.connect(MONGODB_URI || "mongodb://localhost/budget", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false
@@ -36,7 +41,8 @@ client.connect(err => {
     console.log("No Connection to MongoDB Cluster: -> LOCAL ONLY");
     localMongo();
     throw err;
-  } else console.log("Connected to MondoDB Cluster");
+  } else client.open(collection);
+  console.log("Connected to MondoDB Cluster");
 });
 
 // Start API server

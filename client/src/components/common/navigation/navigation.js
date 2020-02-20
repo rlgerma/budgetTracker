@@ -3,7 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
 import { Container } from "../../global"
-import { getUser, isLoggedIn } from "../../../services/auth"
+import { getUser, isAuthenticated } from "../../../utils/auth"
 import {
   Nav,
   NavItem,
@@ -71,7 +71,7 @@ export default class Navigation extends Component {
     const { mobileMenuOpen } = this.state
 
     const content = { message: "", login: true }
-    if (isLoggedIn()) {
+    if (isAuthenticated()) {
       content.message = `Hello, ${getUser().name}`
     } else {
       content.message = "You are not logged in"
