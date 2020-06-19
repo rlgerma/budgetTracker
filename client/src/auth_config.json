@@ -1,7 +1,5 @@
-{
-
-    "domain": "***",
-    "clientId": "**",
-    "redirect_uri": "***"
-}
-
+// {
+//   "domain": "dev-byv4xgxl.auth0.com",
+//   "clientId": "uIYHFHBuJAOKfKCmBqhnEdnGhMNBas8",
+//   "redirect_uri": "http://localhost:8000/callback"
+// }

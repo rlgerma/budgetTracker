@@ -32,12 +32,7 @@ const Header = () => {
               See your money move through our comprehensive tracking system
             </h2>
 
-            <FormSubtitle>
-              Already have a beta account?
-              <FormSubtitleLink to="/app/login">
-                <strong>Sign in</strong>
-              </FormSubtitleLink>
-            </FormSubtitle>
+            <FormSubtitle>Scroll down to see it live</FormSubtitle>
           </HeaderTextGroup>
           <ImageWrapper>
             <StyledImage fluid={data.file.childImageSharp.fluid} />

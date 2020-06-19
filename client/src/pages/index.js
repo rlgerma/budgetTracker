@@ -7,7 +7,7 @@ import Header from "../components/sections/header"
 import Features from "../components/sections/features"
 import Footer from "../components/sections/footer"
 import GetStarted from "../components/sections/getstarted"
-import { Link } from "gatsby"
+import Chart from "../components/common/chart"
 import { Section } from "../components/global"
 
 const Home = ({ user }) => {
@@ -45,7 +45,7 @@ const IndexPage = () => {
             <Section>
               <center>
                 <h2>
-                  <Link to="/app/login">Log in</Link> to see the tracker!
+                  <Chart />
                 </h2>
               </center>
             </Section>

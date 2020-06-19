@@ -27,10 +27,6 @@ class SignUp extends React.Component {
   }
 
   render() {
-    if (silentAuth()) {
-      navigate(`/app/profile`)
-    }
-
     return (
       <>
         <Image />
